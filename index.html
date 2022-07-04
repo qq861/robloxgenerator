@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<!--
+T: 2022-07-04 08:12:04
+Api: 121d758136d68af392d2
+It: 2769418
+
+-->
+<html><head>
+    <title>Link Locked</title>
+<meta name="description" content="Link Locked">
+<meta property="og:title" content="Link Locked">
+<meta property="og:description" content="Link Locked">
+<meta name="referrer" content="no-referrer">
+
+<!-- Analytics -->
+
+<script src="js/bundle.min.js" crossorigin="anonymous"></script>
+<script>
+    Sentry.init({
+        dsn: 'https://e0e6a104cb354a09bf094a90e676ea13@o425163.ingest.sentry.io/5780930',
+        tracesSampleRate: 0.01
+    });
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+
+    
+    ga('send', 'pageview');
+
+</script>
+
+
+    <style>
+        .header_blue {
+            background: #1565c0;
+            padding: 80px 0 20px;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .header_text {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+        body{
+            margin:0;
+            font-family:Roboto, sans-serif;
+            color:#444;
+        }
+        .unlockBtn:hover{
+            box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        }
+        .unlockBtn {
+            background: #2196f3;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+            min-height: 31px;
+            min-width: 70px;
+            padding: 2px 16px;
+            text-align: center;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-transition: all 280ms ease;
+            transition: all 280ms ease;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            font: 500 14px/31px Roboto,sans-serif!important;
+            outline: 0!important;
+            color:white;
+        }
+        .content-container{
+            width:80%;margin:0 auto;
+        }
+        @font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(fonts/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(fonts/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(fonts/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(fonts/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}
+        
+body {
+	font-family: Play;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: #2c3032fa;
+}
+.server-status {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    padding-bottom: 5px;
+    font-size: 12px;
+}
+.color-green{
+  color:#82d81c
+}
+.color-yellow{
+  color:#ff0
+}
+.color-yellow1{
+  color:black;
+}
+.content{
+	padding: 20px 40px;
+	background: #242a2e;
+	text-align: center;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-style: solid;
+	border-color: #242a2e;
+	box-shadow: inset 0 0 10px 1px black;
+	border-radius: 20px;
+}
+.logo{
+  margin-top: 4%;
+  width:200px;
+}
+.icon{
+  margin-top: 4%;
+  width:80px;
+}
+
+.form-control {
+	outline: none;
+	    display: inline-block;
+	    width: 100%;
+	    height: calc(2em + 0.5rem + 5px);
+	    padding: 0px 10px 0 45px;
+	    font-size: 28px;
+	    line-height: 1.5;
+	    color: white;
+	    background-color: #b51800;
+	    background-clip: padding-box;
+	    border: 3px solid #292929;
+	    box-shadow: 0 0 5px 1px black;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.inputicon {
+	width:20px;
+	padding:4px 8px;
+	    background: #ef482f;
+	    color: #1470a1;
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    font-size: 26px;
+	    position: absolute;
+	    left: -20px;
+	    top: 58px;
+	    transform: skew( -30deg );
+}
+
+.form-group {
+	min-width: 240px;
+    margin: 0 auto;
+    width: 60%;
+    position: relative;
+}
+
+.platform-bnt{
+	position: relative;
+	    margin: 5px;
+	    display: inline-block;
+	    background: #dfdfdf;
+	    width: 180px;
+	    color: #000;
+	    text-align: center;
+	    font-size: 32px;
+	    text-transform: uppercase;
+	    padding-top: 40px;
+	    padding-bottom: 40px;
+	    cursor: pointer;
+	    box-shadow: inset 0 0 4px 0px #4b4b4b;
+}
+.platform-bnt:hover{
+box-shadow: 0 0 7px 1px #ebeaeb;
+}
+.platform-bntnext{
+  position: relative;
+  margin-top: 35px;
+  display: block;
+	background: #a91500;
+	width: 180px;
+	color: #fff;
+  text-align: center;
+	font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding:20px 30px 20px 30px;
+  cursor: pointer;
+}
+.platform-bntverify{
+	max-width: 250px;
+position: relative;
+margin-top: 35px;
+display: block;
+background: #a91500;
+width: 180px;
+color: #fff;
+text-align: center;
+font-weight: bold;
+font-size: 32px;
+text-transform: uppercase;
+padding: 20px 30px 20px 30px;
+cursor: pointer;
+}
+
+.help {
+  background: #37515c;
+  text-align: center;
+  margin-top: 10px;
+  width:49%;
+float: left;
+
+}
+.activity {
+background-color:#37515c;
+  text-align: center;
+  margin-top: 10px;
+  width:49%;
+float: right;
+position: relative;
+}
+.menu{
+
+  position: relative;
+  display: inline-block;
+  margin: 20px 15px 0px 15px;
+  background-color: black;
+  padding: 5px 10px 5px 10px;
+	cursor: pointer;
+}
+.menu1{
+
+  position: relative;
+  display: inline-block;
+  margin: 20px 15px 0px 15px;
+  background-color: yellow;
+  padding: 5px 10px 5px 10px;
+	cursor: pointer;
+}
+.help-content{
+	padding: 5px;
+
+}
+.footer{
+  /* position: relative; */
+  /* margin-top: 10px; */
+  /* text-align: center; */
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 50px;
+  /* height: 330px; */
+  overflow: auto;
+}
+
+h2{
+
+	margin: 10px 10px 0px 10px;
+}
+.recent-header{
+  position: relative;
+}
+.recent-right{
+  position: absolute;
+  right:0px;
+  margin-right: 20px;
+  }
+.recent-icon{
+  display: block;
+  margin-top: 30px;
+  position: relative;
+}
+.bg-progress{
+  background-color: #37515c;
+  width:100%;
+  margin-top: 15px;
+  padding:20px 0px 20px 0px;
+	box-shadow: 0px -4px 5px #0000004f;
+}
+.pro-bar-bg{
+  width:95%;
+  height: 5px;
+  background-color: #393b3d;
+  position: relative;
+	text-align: left;
+}
+.step1{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #ffe0bb;
+  position: absolute;
+  top:-11px;
+}
+.step2{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #393b3d;
+  position: absolute;
+  top:-11px;
+  left:50%;
+}
+.step3{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #393b3d;
+  position: absolute;
+  top:-11px;
+  right: 0px;
+}
+.gen-text{
+  position: absolute;
+  top:-20px;
+  left:20%;
+}
+.gen-text1{
+  position: absolute;
+  top:-20px;
+  left:70%;
+}
+.pro-bar{
+	width: 0px;
+	height: 100%;
+	background-color: #ffe0bb;
+}
+.recent-name{
+	font-size: 28px;
+	color:black;
+	font-weight: bold;
+	margin-top: 10px;
+	position: absolute;
+	left:0px;
+	margin-left: 20px;
+}
+.text-size28-black{
+	font-size: 28px;
+	color:black;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+
+.shake{
+animation: Anishake 0.5s;
+animation-fill-mode: forwards;
+}
+
+@keyframes Anishake {
+0% { transform: translate(1px, 1px) rotate(0deg); }
+10% { transform: translate(-1px, -2px) rotate(-1deg); }
+20% { transform: translate(-3px, 0px) rotate(1deg); }
+30% { transform: translate(3px, 2px) rotate(0deg); }
+40% { transform: translate(1px, -1px) rotate(1deg); }
+50% { transform: translate(-1px, 2px) rotate(-1deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+70% { transform: translate(3px, 1px) rotate(-1deg); }
+80% { transform: translate(-1px, -1px) rotate(1deg); }
+90% { transform: translate(1px, 2px) rotate(0deg); }
+100% { transform: translate(1px, -2px) rotate(0deg); }
+}
+
+.page2{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	overflow:auto;
+	background-color: #101111f7;
+	padding-bottom: 50px;
+}
+
+.allcard{
+margin-top:5%;
+max-width: 600px;
+width: 80%
+}
+
+.card{
+		width:250px;
+			filter: invert(0.2);
+}
+.card:hover{
+	filter: invert(0);
+	cursor:pointer;
+}
+
+.slide-in-top1{animation:slide-in-top .2s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-top2{animation:slide-in-top .4s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-top3{animation:slide-in-top .6s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-top4{animation:slide-in-top .8s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+
+.slide-out-top{animation:slide-out-top .8s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-out-top{0%{transform:translateY(1);opacity:1}100%{transform:translateY(-1000px);opacity:0}}
+
+
+.generator-text{
+	display: inline-block;
+margin-top:200px;
+font-size:32px;
+margin-bottom:10px;
+text-shadow: 0 2px 5px #252525;
+}
+.loading{
+	width: 30px;
+	margin-bottom: -5px;
+	animation: Aniloading1 1s linear infinite;
+	}
+	@keyframes Aniloading1 {
+	  100% {transform: rotate(360deg);}
+	}
+
+.verify-text{
+	margin-top :200px;
+	font-size: 44px;
+	    text-shadow: 0 5px 5px #00486f;
+}
+.line{
+max-width: 500px;
+	width: 80%;
+	height: 1px;
+	background-color: white;
+	margin-top:20px;
+}
+.flicker-1{animation:flicker-1 2s linear infinite both}
+@keyframes flicker-1{0%,100%{opacity:1}41.99%{opacity:1}42%{opacity:0}43%{opacity:0}43.01%{opacity:1}47.99%{opacity:1}48%{opacity:0}49%{opacity:0}49.01%{opacity:1}}
+
+@media only screen and (max-width:720px) {
+	.content{
+	padding: 20px 0px;
+	text-align: center;
+	margin-left: 0%;
+	margin-right: 0%;
+	width:90%;
+	}
+	.help{
+		width: 100%;
+	}
+	.activity{
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width:720px) {
+	.platform-bnt{
+	width:100px;
+	font-size:14px;
+		}
+		.card {
+    max-width: 150px;
+		width:40%;
+}
+
+}
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Robux Generator 22 </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+</head>
+
+<body>
+
+  <div class="server-status">
+      <b>Status:</b> <span class="color-green">ONLINE</span>
+      <b>Online users:</b> <span class="color-yellow" id="user-online">1042</span>
+  </div>
+  <center>
+<div class="content">
+<div class="color-white" style="font-size:28px;font-weight: bold">Robux Generator</div>
+<img src="images/15164670109fb7e63851987d55fbfc9e2230cf1cd5.png" class="logo">
+
+<div class="form-group">
+            <div class="color-white" style="font-size:28px;font-weight: bold;color: #8f8f8f;    margin-bottom: -10;
+    margin-top: 20px;">USERNAME</div>
+              <br>
+              <input type="text" class="form-control usernameInput" onkeydown="entertext()" id="name" placeholder="Type here...">
+              <div class="inputicon">
+                <img src="images/1656319704347c6e030707474fdb9f353e4f97dc42.png" style="width:100%;transform: skew( 30deg );">
+              </div>
+          </div>
+
+          <div class="color-white" style="font-size:28px;font-weight: bold;color: #8f8f8f;
+    margin-top: 20px;">SELECT YOUR PLATFORM</div>
+
+          <div class="platform">
+<div class="platform-bnt" id="platform1" onclick="platformSelected(1)">WINDOWS</div>
+<div class="platform-bnt" id="platform2" onclick="platformSelected(2)">MACOS</div>
+<div class="platform-bnt" id="platform3" onclick="platformSelected(3)">PS4 - PS5</div>
+<div class="platform-bnt" id="platform4" onclick="platformSelected(4)">SWITCH</div>
+<div class="platform-bnt" id="platform5" onclick="platformSelected(5)">XBOX</div>
+<div class="platform-bnt" id="platform6" onclick="platformSelected(6)">ANDROID</div>
+<div class="platform-bnt" id="platform7" onclick="platformSelected(7)">IOS</div>
+<center><div class="platform-bntnext flicker-1" id="bntconnect" onclick="connect()">CONNECT</div></center>
+                    </div>
+</div>
+</center>
+<div class="footer">
+
+                    <div class="help" id="help">
+                        <h2>How to use</h2>
+              <div class="menu1 color-yellow1" id="help1" Onclick="help1()">1</div>
+              <div class="menu color-yellow" id="help2" Onclick="help2()">2</div>
+              <div class="menu color-yellow" id="help3" Onclick="help3()">3</div>
+                        <div class="tab-content">
+                            <div id="menu0" class="help-content">
+                                <br>
+                                <h3>CONNECTING TO YOUR ACCOUNT</h3>
+                                <p>Enter your Username and select the platform where your account is active. Proceed by clicking the "Continue" button.</p>
+                            </div>
+                            <div id="menu1" class="help-content" style="display:none">
+                                <br>
+                                <h3>GENERATING RESOURCES</h3>
+                                <p>Select the amount of Robux that you wish to generate. Complete the step by clicking "Generate Now" button.</p>
+                            </div>
+                            <div id="menu2" class="help-content" style="display:none">
+                                <br>
+                                <h3>VERIFICATION AND DELIVERY</h3>
+                                <p>Wait until the generator processing is completed. Complete the Human Verification and enjoy your generated Robux.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                      <div class="activity" id="activity">
+                        <div class="recent-header">
+                        <div class="recent-name" id="recent-name">vucavuca</div>
+                        <div class="recent-right"><h2>RECENT ACTIVITY</h2></div>
+                        </div>
+                        <div class="recent-icon"><center><img src="images/1656319805e0665f80859fd37c283c2e20499b3687.png" class="icon"></center></div>
+                          <h2><div class="text-size28-black" id="recent-num">0</div></h2>
+                          <div class="text-size28-black">ROBUX</div>
+                        <div class="bg-progress">
+                        <center>  <div class="pro-bar-bg">
+                          <span class="gen-text">Generation</span>
+                          <span class="gen-text1">Verifying</span>
+                        <div class="step1" id="step1">  </div>
+                        <div class="step2" id="step2"></div>
+                        <div class="step3" id="step3"> </div>
+                        <div class="pro-bar" id="pro-bar"></div>
+                        </div>
+</center>
+
+                        </div>
+                      </div>
+
+</div>
+<div class="page2" id="page2" style="display:none">
+      <center>
+  <div class="allcard" id="allcard">
+<div style="font-size:32px;margin-bottom:10px;text-shadow: 0 2px 5px #252525;">SELECT YOUR PACKAGE</div>
+<img class="card slide-in-top1" onclick="cardselected()" src="images/1656319862b80349538668f6e1c11a1fb50e2a7762.png">
+<img class="card slide-in-top2" onclick="cardselected()" src="images/1656319862e87c7c5fb6c54c4eb925883f61fa49e5.png">
+<img class="card slide-in-top3" onclick="cardselected()" src="images/16563198641b2c2bb61c960e0d88da0f7823a5355f.png">
+<img class="card slide-in-top4" onclick="cardselected()" src="images/1656319866730e8d587f8ab7eda54d483bb7b7a310.png">
+
+</div>
+<div class="generator" id="generator" style="display:none">
+<div id="gen-text" class="generator-text">Loading</div><img src="images/16564070518c570c3c698d2367e3d9119162587fb1.png" id="loading" class="loading">
+<div id="verify-form" style="display:none">
+<div id="verify-text" class="verify-text">VERIFICATION</div>
+<div id="verify-text1" class="verify-text1">YOU NEED TO PROVE THAT YOU ARE HUMAN TO ACTIVATE RESOURCES</div>
+<div id="line" class="line"></div>
+<div class="platform-bntverify flicker-1" onclick="CPABuildLock()" id="bntverify">VERIFY NOW</div>
+</div>
+</div>
+</center>
+</div>
+</body>
+<script src="js/main.js"></script>
+</html>
+
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    var CPABUILDSETTINGS={"it":2769418,"key":"fab15","testing":1};
+    var forward="";
+    CPABUILDSETTINGS.onComplete=function(data){
+        window.location=forward;
+        return false;
+    };
+</script>
+<script src="js/4cd04f6.js"></script>
+<script type="text/javascript">
+    $('.showContentLocker').click(function(){
+       CPABuildLock();
+        return false;
+    });
+</script>
+<script>
+
+</script>
+<script type="text/javascript">
+    var valactivity= setInterval(RecentActivity, 100);
+var prostep=0;
+var prostepDelay=0;
+var recentCoin ;
+var name;
+var myVar2 = setInterval(UserTimer, 2000);
+function UserTimer() {
+	document.getElementById("user-online").innerHTML=Math.floor(Math.random() * 100)+600;
+}
+function random(){
+
+const RandomCoin = ["1000", "2500", "6000", "10000"];
+recentCoin=RandomCoin[parseInt(Math.random()*4)];
+var gennamelist = ["fio251", "kaka110", "isexx","Gambit",
+"Outrageous Creator",
+"Homely Introvert",
+"Plain Privacy",
+"Brash Thug",
+"Annoyed",
+"Demonic AI",
+"Abnormal Vigor",
+"Optimally Ace",
+"Inimical Thug",
+"Feared Butcher",
+"Multiply Divide",
+"Psychedelic Servicemen",
+"Militaristic Machine",
+"Ball Blaster",
+"Legends Reload",
+"Brute Fact",
+"Bloss flop",
+"Tango Boss",
+"Optimal Aces",
+"Inimical Thugs",
+"Fear Butchers",
+"Left Divide",
+"Psychedelic",
+"Militaristic ",
+"Keen Team Six",
+"Fuzzy Pack",
+"Gangsters",
+"Mortified",
+"Lyrical",
+"Outrageous",
+"Homely",
+"Plain Privilege",
+"Brash Thugs",
+"Nutty Domination",
+"Complex Slayers",
+"Faulty Devils",
+"Fanatical Tyranny",
+"Odd Hooligans",
+"Organic Punks",
+"Quarrelsome",
+"Admirals",
+"Perpetrator",
+"Fighting",
+"Keen Team Six",
+"HolyJESUS",
+"Lone_Ranger",
+"Dark Warrior",
+"XxGoldenWarior"];
+name=gennamelist[Math.floor(Math.random() * 52)];
+  document.getElementById("recent-name").innerHTML=(name);
+}
+
+function RecentActivity(){
+  if (prostep<1){
+      random()
+  }
+else if (prostep<52){
+  document.getElementById("step1").style.backgroundColor="#ffe0bb";
+  document.getElementById("step2").style.backgroundColor="#393b3d";
+  document.getElementById("step3").style.backgroundColor="#393b3d";
+  document.getElementById("pro-bar").style.backgroundColor="#ffe0bb";
+    document.getElementById("pro-bar").style.width=prostep +"%";
+    if (recentCoin==1000){
+          document.getElementById("recent-num").innerHTML=(prostep*19);
+    }
+    if (recentCoin==2500){
+          document.getElementById("recent-num").innerHTML=(prostep*48);
+    }
+    if (recentCoin==6000){
+          document.getElementById("recent-num").innerHTML=(prostep*116);
+    }
+    if (recentCoin==10000){
+          document.getElementById("recent-num").innerHTML=(prostep*192);
+    }
+
+}
+else if(prostep<99){
+document.getElementById("step2").style.backgroundColor="#ffe0bb";
+document.getElementById("pro-bar").style.width=prostep +"%";
+document.getElementById("recent-num").innerHTML=recentCoin;
+}
+else if(prostep<100){
+document.getElementById("step1").style.backgroundColor="#32ab00";
+document.getElementById("step2").style.backgroundColor="#32ab00";
+document.getElementById("step3").style.backgroundColor="#32ab00";
+document.getElementById("pro-bar").style.backgroundColor="#32ab00";
+}
+else if(prostep>130){
+  prostep=0;
+
+}
+prostep++;
+}
+
+
+//*HOW TO USE
+
+function help1(){
+  document.getElementById("menu0").style.display="block";
+  document.getElementById("help1").style.color="black";
+  document.getElementById("help1").style.backgroundColor="yellow";
+
+  document.getElementById("help2").style.color="yellow";
+  document.getElementById("help2").style.backgroundColor="black";
+
+  document.getElementById("help3").style.color="yellow";
+  document.getElementById("help3").style.backgroundColor="black";
+  document.getElementById("menu1").style.display="none";
+  document.getElementById("menu2").style.display="none";
+}
+function help2(){
+  document.getElementById("menu0").style.display="none";
+  document.getElementById("menu1").style.display="block";
+  document.getElementById("help2").style.color="black";
+  document.getElementById("help2").style.backgroundColor="yellow";
+
+  document.getElementById("help1").style.color="yellow";
+  document.getElementById("help1").style.backgroundColor="black";
+
+  document.getElementById("help3").style.color="yellow";
+  document.getElementById("help3").style.backgroundColor="black";
+  document.getElementById("menu2").style.display="none";
+}
+function help3(){
+  document.getElementById("menu0").style.display="none";
+  document.getElementById("menu1").style.display="none";
+  document.getElementById("menu2").style.display="block";
+  document.getElementById("help3").style.color="black";
+  document.getElementById("help3").style.backgroundColor="yellow";
+
+  document.getElementById("help2").style.color="yellow";
+  document.getElementById("help2").style.backgroundColor="black";
+
+  document.getElementById("help1").style.color="yellow";
+  document.getElementById("help1").style.backgroundColor="black";
+}
+
+function connect(){
+  var getname=document.getElementById("name").value;
+  if (getname.length<3){
+    document.getElementById("name").classList.add('shake');
+    document.getElementById("name").style.border="3px solid #f00";
+  }else{
+        document.getElementById("bntconnect").innerHTML="Connecting";
+        var valConnecting= setInterval(Connecting, 2000);
+        function Connecting(){
+          document.getElementById("bntconnect").innerHTML="CONNECTED";
+          document.getElementById("bntconnect").style.color="#292929";
+          var valConnected= setInterval(Connected, 2000);
+          function Connected(){
+            document.getElementById("page2").style.display="block";
+            document.getElementById("help").style.display="none";
+            document.getElementById("activity").style.display="none";
+
+            clearInterval(valConnected);
+          }
+                      clearInterval(valConnecting);
+        }
+  }
+}
+
+function entertext(){
+  document.getElementById("name").style.border="3px solid #292929";
+}
+function cardselected(){
+  var valConnecting= setInterval(Connecting,100);
+  function Connecting(){
+    document.getElementById("allcard").classList.add('slide-out-top');
+    clearInterval(valConnecting);
+  }
+  var valConnecting2= setInterval(Connecting2, 2000);
+  function Connecting2(){
+  document.getElementById("allcard").style.display="none";
+  document.getElementById("generator").style.display="block";
+  startGen()
+    clearInterval(valConnecting2);
+  }
+}
+
+function startGen() {
+
+var step=0;
+  var valConnecting= setInterval(Connecting,4000);
+  function Connecting(){
+
+  if (step==0){
+      document.getElementById("gen-text").innerHTML="Scraping data";
+  }else if(step==1){
+    document.getElementById("gen-text").innerHTML="Saving data";
+  }else if(step==2){
+    document.getElementById("gen-text").innerHTML="Hacking database";
+  }else if(step==3){
+    document.getElementById("loading").style.display="none";
+    document.getElementById("gen-text").innerHTML="Hacked!";
+  }else if(step==4){
+    document.getElementById("gen-text").innerHTML="Anti-Bot verification failed!";
+    document.getElementById("gen-text").style.color="red";
+    document.getElementById("gen-text").style.textShadow ="0px 0px 0px #252525";
+  }else if(step==5){
+document.getElementById("gen-text").style.display="none";
+document.getElementById("verify-form").style.display="block";
+        clearInterval(valConnecting);
+  }
+step=step+1
+  }
+}
+
+
+
+
+
+function platformSelected(id){
+  document.getElementById("platform1").style.backgroundImage="";
+document.getElementById("platform2").style.backgroundImage="";
+document.getElementById("platform3").style.backgroundImage="";
+document.getElementById("platform4").style.backgroundImage="";
+document.getElementById("platform5").style.backgroundImage="";
+document.getElementById("platform6").style.backgroundImage="";
+document.getElementById("platform7").style.backgroundImage="";
+  document.getElementById("platform"+id).style.backgroundSize="cover";
+  document.getElementById("platform"+id).style.backgroundRepeat="no-repeat";
+  document.getElementById("platform"+id).style.backgroundImage="url('https://d13pxqgp3ixdbh.cloudfront.net/uploads/1656319741368368038a71941eca4c4ccd6b72dd17.png')";
+}
+
+</script>
+<script>
+    if(typeof window.ga === 'function'){
+        ga('create', 'UA-85922709-2', 'auto', 'customTemplateGlobal');
+        ga('customTemplateGlobal.set', 'dimension1', typeof window.CPBContentLocker === 'function' ? 0 : 1);
+        ga('customTemplateGlobal.send', 'pageView');
+    }
+
+
+</script>
+</body>
+</html>
